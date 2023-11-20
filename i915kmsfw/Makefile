@@ -20,6 +20,7 @@ SUBDIR+=	skldmc_127 \
 		sklguc_933 \
 		sklguc_3300 \
 		sklguc_6200 \
+		sklguc_6903 \
 		sklhuc_107 \
 		sklhuc_200
 .endif
@@ -29,6 +30,7 @@ SUBDIR+=	bxtdmc_107 \
 		bxtguc_929 \
 		bxtguc_3300 \
 		bxtguc_6200 \
+		bxtguc_6903 \
 		bxthuc_107 \
 		bxthuc_200
 .endif
@@ -38,10 +40,12 @@ SUBDIR+=	kbldmc_104 \
 		kblguc_939 \
 		kblguc_3300 \
 		kblguc_6200 \
+		kblguc_6903 \
 		kblhuc_200 \
 		kblhuc_400 \
 		cmlguc_3300 \
 		cmlguc_6200 \
+		cmlguc_6903 \
 		cmlguc_7011 \
 		cmlhuc_400
 .endif
@@ -50,6 +54,7 @@ SUBDIR+=	kbldmc_104 \
 SUBDIR+=	glkdmc_104 \
 		glkguc_3300 \
 		glkguc_6200 \
+		glkguc_6903 \
 		glkhuc_301 \
 		glkhuc_400
 .endif
@@ -64,6 +69,7 @@ SUBDIR+=	icldmc_107 \
 		icldmc_109 \
 		iclguc_3300 \
 		iclguc_6200 \
+		iclguc_6903 \
 		iclhuc_84 \
 		iclhuc_900
 .endif
@@ -71,6 +77,7 @@ SUBDIR+=	icldmc_107 \
 .if ${I915KMODS:Melkhartlake}
 SUBDIR+=	ehlguc_3304 \
 		ehlguc_6200 \
+		ehlguc_6903 \
 		ehlhuc_900
 .endif
 
@@ -80,6 +87,7 @@ SUBDIR+=	tgldmc_204 \
 		tgldmc_212 \
 		tglguc_3520 \
 		tglguc_6200 \
+		tglguc_6903 \
 		tglhuc_750 \
 		tglhuc_793
 .endif
@@ -94,6 +102,7 @@ SUBDIR+=	adlpdmc \
 		adlpdmc_210 \
 		adlpdmc_212 \
 		adlpguc_6203 \
+		adlpguc_6903 \
 		adlsdmc_201
 .endif
 
@@ -105,6 +114,7 @@ SUBDIR+=	mtldmc \
 .if ${I915KMODS:Mdg1}
 SUBDIR+=	dg1dmc_202 \
 		dg1guc_6200 \
+		dg1guc_6903 \
 		dg1huc \
 		dg1huc_771 \
 		dg1huc_793

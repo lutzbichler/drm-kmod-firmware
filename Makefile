@@ -3,12 +3,12 @@
 SYSDIR?=/usr/src/sys
 .include "${SYSDIR}/conf/kern.opts.mk"
 
-_VALID_KMODS=	amdgpukmsfw i915kmsfw radeonkmsfw
+_VALID_KMODS=	amdgpukmsfw i915kmsfw radeonkmsfw xekmsfw
 
 DEFAULT_KMODS=	amdgpukmsfw radeonkmsfw
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
-DEFAULT_KMODS+=	i915kmsfw
+DEFAULT_KMODS+=	i915kmsfw xekmsfw
 .endif
 
 # Calling kldxref(8) for each module is expensive.

@@ -16,7 +16,12 @@ _VALID_AMDGPUKMODS=	aldebaran \
 			dcn_3_1_6 \
 			dcn_3_2_0 \
 			dcn_3_2_1 \
+			dcn_3_5 \
+			dcn_3_5_1 \
+			dcn_4_0_1 \
 			fiji \
+			gc_9_4_3 \
+			gc_9_4_4 \
 			gc_10_3_6 \
 			gc_10_3_7 \
 			gc_11_0_0 \
@@ -24,6 +29,11 @@ _VALID_AMDGPUKMODS=	aldebaran \
 			gc_11_0_2 \
 			gc_11_0_3 \
 			gc_11_0_4 \
+			gc_11_5_0 \
+			gc_11_5_1 \
+			gc_11_5_2 \
+			gc_12_0_0 \
+			gc_12_0_1 \
 			hainan \
 			hawaii \
 			kabini \
@@ -41,13 +51,22 @@ _VALID_AMDGPUKMODS=	aldebaran \
 			psp_13_0_0 \
 			psp_13_0_4 \
 			psp_13_0_5 \
+			psp_13_0_6 \
 			psp_13_0_7 \
 			psp_13_0_8 \
 			psp_13_0_10 \
 			psp_13_0_11 \
+			psp_13_0_14 \
+			psp_14_0_0 \
+			psp_14_0_1 \
+			psp_14_0_2 \
+			psp_14_0_3 \
+			psp_14_0_4 \
 			raven \
 			raven2 \
 			renoir \
+			sdma_4_4_2 \
+			sdma_4_4_5 \
 			sdma_5_2_6 \
 			sdma_5_2_7 \
 			sdma_6_0_0 \
@@ -55,10 +74,19 @@ _VALID_AMDGPUKMODS=	aldebaran \
 			sdma_6_0_2 \
 			sdma_6_0_3 \
 			sdma_6_0_4 \
+			sdma_6_1_0 \
+			sdma_6_1_1 \
+			sdma_6_1_2 \
+			sdma_7_0_0 \
+			sdma_7_0_1 \
 			si58 \
 			smu_13_0_0 \
+			smu_13_0_6 \
 			smu_13_0_7 \
 			smu_13_0_10 \
+			smu_13_0_14 \
+			smu_14_0_2 \
+			smu_14_0_3 \
 			stoney \
 			tahiti \
 			tonga \
@@ -66,12 +94,20 @@ _VALID_AMDGPUKMODS=	aldebaran \
 			vcn_3_1_2 \
 			vcn_4_0_0 \
 			vcn_4_0_2 \
+			vcn_4_0_3 \
 			vcn_4_0_4 \
+			vcn_4_0_5 \
+			vcn_4_0_6 \
+			vcn_4_0_6_1 \
+			vcn_5_0_0 \
 			vega10 \
 			vega12 \
 			vega20 \
 			vegam \
 			verde \
+			vpe_6_1_0 \
+			vpe_6_1_1 \
+			vpe_6_1_3 \
 			yellow_carp
 
 .if ${OSVERSION} >= 1301000
@@ -253,6 +289,18 @@ SUBDIR+=	fiji_ce		\
 		fiji_vce
 .endif
 
+.if ${AMDGPUKMODS:Mgc_9_4_3}
+SUBDIR+=	gc_9_4_3_mec	\
+		gc_9_4_3_rlc	\
+		gc_9_4_3_sjt_mec
+.endif
+
+.if ${AMDGPUKMODS:Mgc_9_4_4}
+SUBDIR+=	gc_9_4_4_mec	\
+		gc_9_4_4_rlc	\
+		gc_9_4_4_sjt_mec
+.endif
+
 .if ${AMDGPUKMODS:Mgc_10_3_6}
 SUBDIR+=	gc_10_3_6_ce	\
 		gc_10_3_6_me	\
@@ -279,7 +327,8 @@ SUBDIR+=	gc_11_0_0_imu	\
 		gc_11_0_0_mes1	\
 		gc_11_0_0_mes_2	\
 		gc_11_0_0_pfp	\
-		gc_11_0_0_rlc
+		gc_11_0_0_rlc	\
+		gc_11_0_0_rlc_1
 .endif
 
 .if ${AMDGPUKMODS:Mgc_11_0_1}
@@ -323,6 +372,60 @@ SUBDIR+=	gc_11_0_4_imu	\
 		gc_11_0_4_mes_2	\
 		gc_11_0_4_pfp	\
 		gc_11_0_4_rlc
+.endif
+
+.if ${AMDGPUKMODS:Mgc_11_5_0}
+SUBDIR+=	gc_11_5_0_imu	\
+		gc_11_5_0_me	\
+		gc_11_5_0_mec	\
+		gc_11_5_0_mes1	\
+		gc_11_5_0_mes_2	\
+		gc_11_5_0_pfp	\
+		gc_11_5_0_rlc
+.endif
+
+.if ${AMDGPUKMODS:Mgc_11_5_1}
+SUBDIR+=	gc_11_5_1_imu	\
+		gc_11_5_1_me	\
+		gc_11_5_1_mec	\
+		gc_11_5_1_mes1	\
+		gc_11_5_1_mes_2	\
+		gc_11_5_1_pfp	\
+		gc_11_5_1_rlc
+.endif
+
+.if ${AMDGPUKMODS:Mgc_11_5_2}
+SUBDIR+=	gc_11_5_2_imu	\
+		gc_11_5_2_me	\
+		gc_11_5_2_mec	\
+		gc_11_5_2_mes1	\
+		gc_11_5_2_mes_2	\
+		gc_11_5_2_pfp	\
+		gc_11_5_2_rlc
+.endif
+
+.if ${AMDGPUKMODS:Mgc_12_0_0}
+SUBDIR+=	gc_12_0_0_imu	\
+		gc_12_0_0_me	\
+		gc_12_0_0_mec	\
+		gc_12_0_0_mes	\
+		gc_12_0_0_mes1	\
+		gc_12_0_0_pfp	\
+		gc_12_0_0_rlc	\
+		gc_12_0_0_toc	\
+		gc_12_0_0_uni_mes
+.endif
+
+.if ${AMDGPUKMODS:Mgc_12_0_1}
+SUBDIR+=	gc_12_0_1_imu	\
+		gc_12_0_1_me	\
+		gc_12_0_1_mec	\
+		gc_12_0_1_mes	\
+		gc_12_0_1_mes1	\
+		gc_12_0_1_pfp	\
+		gc_12_0_1_rlc	\
+		gc_12_0_1_toc	\
+		gc_12_0_1_uni_mes
 .endif
 
 .if ${AMDGPUKMODS:Mpolaris10}
@@ -780,6 +883,11 @@ SUBDIR+=	psp_13_0_5_asd \
 		psp_13_0_5_toc
 .endif
 
+.if ${AMDGPUKMODS:Mpsp_13_0_6}
+SUBDIR+=	psp_13_0_6_sos \
+		psp_13_0_6_ta
+.endif
+
 .if ${AMDGPUKMODS:Mpsp_13_0_7}
 SUBDIR+=	psp_13_0_7_sos \
 		psp_13_0_7_ta
@@ -799,6 +907,44 @@ SUBDIR+=	psp_13_0_10_sos \
 .if ${AMDGPUKMODS:Mpsp_13_0_11}
 SUBDIR+=	psp_13_0_11_ta \
 		psp_13_0_11_toc
+.endif
+
+.if ${AMDGPUKMODS:Mpsp_13_0_14}
+SUBDIR+=	psp_13_0_14_sos \
+		psp_13_0_14_ta
+.endif
+
+.if ${AMDGPUKMODS:Mpsp_14_0_0}
+SUBDIR+=	psp_14_0_0_ta \
+		psp_14_0_0_toc
+.endif
+
+.if ${AMDGPUKMODS:Mpsp_14_0_1}
+SUBDIR+=	psp_14_0_1_ta \
+		psp_14_0_1_toc
+.endif
+
+.if ${AMDGPUKMODS:Mpsp_14_0_2}
+SUBDIR+=	psp_14_0_2_sos \
+		psp_14_0_2_ta
+.endif
+
+.if ${AMDGPUKMODS:Mpsp_14_0_3}
+SUBDIR+=	psp_14_0_3_sos \
+		psp_14_0_3_ta
+.endif
+
+.if ${AMDGPUKMODS:Mpsp_14_0_4}
+SUBDIR+=	psp_14_0_4_ta \
+		psp_14_0_4_toc
+.endif
+
+.if ${AMDGPUKMODS:Msdma_4_4_2}
+SUBDIR+=	sdma_4_4_2
+.endif
+
+.if ${AMDGPUKMODS:Msdma_4_4_5}
+SUBDIR+=	sdma_4_4_5
 .endif
 
 .if ${AMDGPUKMODS:Msdma_5_2_6}
@@ -825,8 +971,32 @@ SUBDIR+=	sdma_6_0_2
 SUBDIR+=	sdma_6_0_3
 .endif
 
+.if ${AMDGPUKMODS:Msdma_6_1_0}
+SUBDIR+=	sdma_6_1_0
+.endif
+
+.if ${AMDGPUKMODS:Msdma_6_1_1}
+SUBDIR+=	sdma_6_1_1
+.endif
+
+.if ${AMDGPUKMODS:Msdma_6_1_2}
+SUBDIR+=	sdma_6_1_2
+.endif
+
+.if ${AMDGPUKMODS:Msdma_7_0_0}
+SUBDIR+=	sdma_7_0_0
+.endif
+
+.if ${AMDGPUKMODS:Msdma_7_0_1}
+SUBDIR+=	sdma_7_0_1
+.endif
+
 .if ${AMDGPUKMODS:Msmu_13_0_0}
 SUBDIR+=	smu_13_0_0
+.endif
+
+.if ${AMDGPUKMODS:Msmu_13_0_6}
+SUBDIR+=	smu_13_0_6
 .endif
 
 .if ${AMDGPUKMODS:Msmu_13_0_7}
@@ -835,6 +1005,18 @@ SUBDIR+=	smu_13_0_7
 
 .if ${AMDGPUKMODS:Msmu_13_0_10}
 SUBDIR+=	smu_13_0_10
+.endif
+
+.if ${AMDGPUKMODS:Msmu_13_0_14}
+SUBDIR+=	smu_13_0_14
+.endif
+
+.if ${AMDGPUKMODS:Msmu_14_0_2}
+SUBDIR+=	smu_14_0_2
+.endif
+
+.if ${AMDGPUKMODS:Msmu_14_0_3}
+SUBDIR+=	smu_14_0_3
 .endif
 
 .if ${AMDGPUKMODS:Mvcn_3_1_2}
@@ -849,8 +1031,28 @@ SUBDIR+=	vcn_4_0_0
 SUBDIR+=	vcn_4_0_2
 .endif
 
+.if ${AMDGPUKMODS:Mvcn_4_0_3}
+SUBDIR+=	vcn_4_0_3
+.endif
+
 .if ${AMDGPUKMODS:Mvcn_4_0_4}
 SUBDIR+=	vcn_4_0_4
+.endif
+
+.if ${AMDGPUKMODS:Mvcn_4_0_5}
+SUBDIR+=	vcn_4_0_5
+.endif
+
+.if ${AMDGPUKMODS:Mvcn_4_0_6}
+SUBDIR+=	vcn_4_0_6
+.endif
+
+.if ${AMDGPUKMODS:Mvcn_4_0_6_1}
+SUBDIR+=	vcn_4_0_6_1
+.endif
+
+.if ${AMDGPUKMODS:Mvcn_5_0_0}
+SUBDIR+=	vcn_5_0_0
 .endif
 
 .if ${AMDGPUKMODS:Mdcn_3_1_4}
@@ -871,6 +1073,30 @@ SUBDIR+=	dcn_3_2_0_dmcub
 
 .if ${AMDGPUKMODS:Mdcn_3_2_1}
 SUBDIR+=	dcn_3_2_1_dmcub
+.endif
+
+.if ${AMDGPUKMODS:Mdcn_3_5}
+SUBDIR+=	dcn_3_5_dmcub
+.endif
+
+.if ${AMDGPUKMODS:Mdcn_3_5_1}
+SUBDIR+=	dcn_3_5_1_dmcub
+.endif
+
+.if ${AMDGPUKMODS:Mdcn_4_0_1}
+SUBDIR+=	dcn_4_0_1_dmcub
+.endif
+
+.if ${AMDGPUKMODS:Mvpe_6_1_0}
+SUBDIR+=	vpe_6_1_0
+.endif
+
+.if ${AMDGPUKMODS:Mvpe_6_1_1}
+SUBDIR+=	vpe_6_1_1
+.endif
+
+.if ${AMDGPUKMODS:Mvpe_6_1_3}
+SUBDIR+=	vpe_6_1_3
 .endif
 
 SUBDIR_PARALLEL=
